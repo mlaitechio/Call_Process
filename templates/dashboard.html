@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <title>ABC Dashboard</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="/static/assets/css/style.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="/static/assets/icons/themify-icons/themify-icons.css" rel="stylesheet">
+    <link href="/static/assets/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  align-item:right;
+  text-align: right;
+  padding-right: 5%;
+}
+</style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="skin-default-dark fixed-layout">
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader__figure"></div>
+        <p class="loader__label">adityabirlacapital dashboard</p>
+    </div>
+</div>
+
+<div class="sticky" id="download_sticky">
+    <a href="/media/bulk.zip" download>
+        <button>Download Selected</button>
+    </a>
+</div>
+
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <header class="topbar" style="background-color: #a01414;">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+            <!-- ============================================================== -->
+            <!-- Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <!-- Logo icon -->
+                    <b>
+                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                        <!-- Dark Logo icon -->
+                        <!-- <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" /> -->
+                        <!-- Light Logo icon -->
+                        <!-- <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" /> -->
+                    </b>
+                    <!--End Logo icon -->
+                    <!-- Logo text --><span>
+                            <!-- dark Logo text -->
+                            <img src="/static/assets/images/abc-logo.png" alt="homepage" class="dark-logo"
+                                 style="width: 50%; height: auto;"/>
+                    <!-- Light Logo text -->
+                    <!-- <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> -->
+                </a>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-collapse">
+                <!-- ============================================================== -->
+                <!-- toggle and nav items -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav mr-auto">
+                    <!-- This is  -->
+                    <li class="nav-item hidden-sm-up"><a class="nav-link nav-toggler waves-effect waves-light"
+                                                         href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+                    <!-- ============================================================== -->
+                    <!-- Search -->
+                    <!-- ============================================================== -->
+                    <li class="nav-item search-box"><a class="nav-link waves-effect waves-dark"
+                                                       href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                        <form class="app-search">
+                            <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
+                                class="srh-btn"><i class="fa fa-times"></i></a>
+                        </form>
+                    </li>
+                </ul>
+                <ul class="navbar-nav my-lg-0">
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <li class="nav-item dropdown">
+                        <a href="{% url 'django_auth_adfs:logout' %}"><img
+                                src="/static/assets/images/users/1.jpg" alt="Logout" class="img-circle" width="30"></a>
+                    </li>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar">
+        <div class="d-flex no-block nav-text-box align-items-center">
+            <span><img src="/static/assets/images/logo-icon.png" style="width: 30%; height: 30%;"></span>
+            <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i
+                    class="ti-menu"></i></a>
+            <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i
+                    class="ti-menu ti-close"></i></a>
+        </div>
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li><a class="waves-effect waves-dark" href="#" aria-expanded="false"><i
+                            class="fa fa-tachometer"></i><span class="hide-menu"></span>Dashboard</a></li>
+                    <!-- <div class="text-center m-t-30"> -->
+                    <!-- <a href="https://wrappixel.com/templates/adminwrap/" -->
+                    <!-- class="btn waves-effect waves-light btn-success hidden-md-down"> Upgrade to Pro</a> -->
+                    <!-- </div> -->
+                </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h4 class="text-themecolor">Transcribed Data Dashboard</h4>
+                </div>
+                <!-- <div class="col-md-7 align-self-center text-right"> -->
+                <!-- <div class="d-flex justify-content-end align-items-center"> -->
+                <!-- <ol class="breadcrumb"> -->
+                <!-- <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li> -->
+                <!-- <li class="breadcrumb-item active">Table Basic</li> -->
+                <!-- </ol> -->
+                <!-- <button type="button" class="btn btn-success d-none d-lg-block m-l-15"> Upgrade To -->
+                <!-- Pro</button> -->
+                <!-- </div> -->
+                <!-- </div> -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="col-xs-12">
+                <div class="text-right">
+
+                    <button type="button" class="btn btn-success" style="margin-bottom: 10px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-download" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path>
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path>
+                        </svg>
+                        <a href="/download/" style="color: white;">Download Report</a>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- column -->
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- <h4 class="card-title">Basic Table</h4> -->
+                            <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
+                            <div class="table-responsive">
+                                <table class="table display" id="example" style="width:100%">
+                                    <thead>
+                                    <tr>
+                                        <th>Select</th>
+                                        <th>Request ID</th>
+                                        <th>Language</th>
+                                        <th>Date & Time</th>
+                                        <th>Campaign</th>
+                                        <th>Agent</th>
+                                        <th>Call Duration</th>
+                                        <th>Call Status</th>
+                                        <th>Sentiment Score</th>
+                                        <th>Quality Score</th>
+                                        <th>Escalation for Manager</th>
+                                        <th>Transcribed Status</th>
+                                        <th>Download</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {#                                    <tr>#}
+                                    {#                                        <td>1620279117704</td>#}
+                                    {#                                        #}
+                                    {#                                        <td>2021-05-06 11:01:57</td>#}
+                                    {#                                        <td>ABML_StockandSolutions_Eng</td>#}
+                                    {#                                        <td>Akash</td>#}
+                                    {#                                        <td>5</td>#}
+                                    {#                                        <td>Completed</td>#}
+                                    {#                                        <td><span class="label label-success">Completed</span></td>#}
+                                    {#                                        <td><span class="fa fa-download">&nbsp; Download</span></td>#}
+                                    {#                                    </tr>#}
+                                    {% for row in data %}
+                                        <tr {% if row.qa_escalation == "1" %}style = "background-color:#ff9591;" {% endif %}>
+                                            <td><input type="checkbox" name="selected_files" value="{{ row.request_id }}" /></td>
+                                            <td>{{ row.request_id }}</td>
+                                            <td>{{ row.call_language }}</td>
+                                            <td>{{ row.date_time }}</td>
+                                            <td>{{ row.campaign }}</td>
+                                            <td>{{ row.agent_name }}</td>
+                                            <td>{{ row.call_duration }}</td>
+                                            <td>{{ row.call_status }}</td>
+                                            {% if  row.sentiment_score == None %}
+                                                <td>-</td>
+                                            {% else %}
+                                                <td>{{ row.sentiment_score }}%</td>
+                                            {% endif %}
+                                            {% if  row.qa_score == None %}
+                                                <td>-</td>
+                                            {% else %}
+                                                <td><div style="height:70%; background:{{ row.qa_color }}">{{ row.qa_score }}</div></td>
+                                            {% endif %}
+                                            {% if  row.qa_escalation == None %}
+                                                <td>-</td>
+                                            {% else %}
+                                                {% if row.qa_escalation == "1" %}
+                                                    <td>Yes</td>
+                                                {% else %}
+                                                    <td>No</td>
+                                                {% endif %}
+                                            {% endif %}
+                                            {% if row.transcription_status == "Not Started" %}
+                                                <td><span
+                                                        class="label label-warning">{{ row.transcription_status }}</span>
+                                                </td>
+                                                <td><span class="fa fa-download" disabled="">&nbsp; Download</span></td>
+                                            {% endif %}
+                                            {% if row.transcription_status == "In Progress" %}
+                                                <td><span
+                                                        class="label label-primary">{{ row.transcription_status }}</span>
+                                                </td>
+                                                <td><span class="fa fa-download" disabled="">&nbsp; Download</span></td>
+                                            {% endif %}
+                                            {% if row.transcription_status == "Completed" %}
+                                                <td><span
+                                                        class="label label-success">{{ row.transcription_status }}</span>
+                                                </td>
+                                                <td><span class="fa fa-download" disabled="">&nbsp; <a href="/media/{{ row.transcribed_file }}" download>Download</a></span></td>
+                                            {% endif %}
+                                            {% if row.transcription_status == "Failed" %}
+                                                <td><span
+                                                        class="label label-danger">{{ row.transcription_status }}</span>
+                                                </td>
+                                                <td><span class="fa fa-download" disabled="">&nbsp;
+                                                    <a href="/media/{{ row.transcribed_file }}" download>Download</a></span></td>
+                                            {% endif %}
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <footer class="footer">
+        © 2020, Aditya Birla Capital Ltd. All Rights Reserved.
+    </footer>
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src="/static/assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="/static/assets/node_modules/popper/popper.min.js"></script>
+<script src="/static/assets/node_modules/bootstrap/assets/js/bootstrap.min.js"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="/static/assets/js/perfect-scrollbar.jquery.min.js"></script>
+<!--Wave Effects -->
+<script src="/static/assets/js/waves.js"></script>
+<!--Menu sidebar -->
+<script src="/static/assets/js/sidebarmenu.js"></script>
+<!--stickey kit -->
+<script src="/static/assets/node_modules/sticky-kit-master/assets/sticky-kit.min.js"></script>
+<script src="/static/assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<!--Custom JavaScript -->
+<script src="/static/assets/js/custom.min.js"></script>
+<script>$(document).ready(function () {
+    $('#example').DataTable({
+        "order": [[ 3, "desc" ]]
+    });
+    $('.sticky').hide();
+});
+
+$('input[name="selected_files"]').click(function () {
+    var legchecked = $('input[name="selected_files"]:checked').length;
+    console.log(legchecked)
+    if (!legchecked){ $('.sticky').hide(); };
+
+    var file_name = [];
+    $('input[name="selected_files"]:checked').each(function() {
+        file_name.push($(this).val());
+        $('.sticky').show();
+    });
+    console.log(file_name);
+    $.ajax(
+    {
+        type:"GET",
+        url: "{% url 'bulk' %}",
+        data:{
+                 'files[]': file_name
+        },
+        success: function( data ) 
+        {
+            console.log(data)
+        }
+     })
+});
+</script>
+</body>
+
+</html>
