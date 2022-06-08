@@ -7,7 +7,7 @@ from ABC.settings import BASE_DIR
 import os, csv
 from django.http import JsonResponse
 from django.http import HttpResponse
-
+#views
 def root(request):
     result = Analytic.objects.all().order_by('-id')
     #print(result)
