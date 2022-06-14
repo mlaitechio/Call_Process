@@ -51,7 +51,7 @@ MIDDLEWARE = [
 AUTHENTICATION_BACKENDS = (
     #'django_auth_adfs.backend.AdfsAuthCodeBackend',
 )
-
+#adfs disabled
 AUTH_ADFS = {
     "SERVER": "login.adityabirlacapital.com",
     "CLIENT_ID": "7d42f662-8982-4b11-a578-35400112f728",
