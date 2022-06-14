@@ -38,18 +38,18 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    #'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django_auth_adfs.middleware.LoginRequiredMiddleware',
+    #'django_auth_adfs.middleware.LoginRequiredMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware'
 ]
 
 AUTHENTICATION_BACKENDS = (
-    'django_auth_adfs.backend.AdfsAuthCodeBackend',
+    #'django_auth_adfs.backend.AdfsAuthCodeBackend',
 )
 
 AUTH_ADFS = {
@@ -67,12 +67,12 @@ AUTH_ADFS = {
     "GROUP_CLAIM": "group"
 }
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 #SECURE_SSL_REDIRECT = True
 
 # Configure django to redirect users to the right URL for login
-LOGIN_URL = "django_auth_adfs:login"
-LOGIN_REDIRECT_URL = "/"
+#LOGIN_URL = "django_auth_adfs:login"
+#LOGIN_REDIRECT_URL = "/"
 
 ROOT_URLCONF = 'ABC.urls'
 
@@ -147,6 +147,6 @@ TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '..', 'templates').repl
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 CRONJOBS = [
-    ('*/5 * * * *', 'AbcApp.read_data_from_blob_cron.read_data_from_blob'),
-    ('*/2 * * * *', 'AbcApp.transcription_start_cron.process_file_for_transcription')
+    ('*/5 * * * *', 'AbcApp.read_data_from_blob_cron.read_data_from_blob')
+    #('*/2 * * * *', 'AbcApp.transcription_start_cron.process_file_for_transcription')
 ]
