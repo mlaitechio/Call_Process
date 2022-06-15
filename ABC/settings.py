@@ -56,13 +56,16 @@ AUTHENTICATION_BACKENDS = (
 AUTH_ADFS = {
     "SERVER": "login.adityabirlacapital.com",
     "CLIENT_ID": "cfe85d02-8677-48e6-8060-4444a812ccc0",
-    "RELYING_PARTY_ID": "https://absliamcnextgen.azurewebsites.net/",
+    "RELYING_PARTY_ID": "cfe85d02-8677-48e6-8060-4444a812ccc0",
     # Make sure to read the documentation about the AUDIENCE setting
     # when you configured the identifier as a URL!
-    "AUDIENCE": "microsoft:identityserver:absliamcnextgen.azurewebsites.net",
+    "AUDIENCE": "microsoft:identityserver:cfe85d02-8677-48e6-8060-4444a812ccc0",
+    "CLIENT_SECRET":  "RteXxo4hKE_S1iiiuiMuLaNisZbGwVy6xVkJDDbN",
     "CLAIM_MAPPING": {"first_name": "given_name",
                       "last_name": "family_name",
                       "email": "email"},
+    "USERNAME_CLAIM": "email",
+    "GROUP_CLAIM": "group"
 }
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
