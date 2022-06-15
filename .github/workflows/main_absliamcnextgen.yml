@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'ABSLIAMCNextGen'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AA4B452F69D14BF6B8C505DEC921A017 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DDF3302FC3EB4B4E9F345117E35ABC61 }}
