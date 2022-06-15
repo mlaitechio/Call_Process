@@ -54,7 +54,7 @@ AUTHENTICATION_BACKENDS = (
 
 AUTH_ADFS = {
     "SERVER": "login.adityabirlacapital.com",
-    "CLIENT_ID": "cfe85d02-8677-48e6-8060-4444a812ccc0",
+    "CLIENT_ID": "RteXxo4hKE_S1iiiuiMuLaNisZbGwVy6xVkJDDbN",
     "RELYING_PARTY_ID": "https://absliamcnextgen.azurewebsites.net/",
     # Make sure to read the documentation about the AUDIENCE setting
     # when you configured the identifier as a URL!
@@ -144,6 +144,6 @@ TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '..', 'templates').repl
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 CRONJOBS = [
-    ('*/5 * * * *', 'AbcApp.read_data_from_blob_cron.read_data_from_blob')
-    #('*/2 * * * *', 'AbcApp.transcription_start_cron.process_file_for_transcription')
+    ('*/5 * * * *', 'AbcApp.read_data_from_blob_cron.read_data_from_blob'),
+    ('*/2 * * * *', 'AbcApp.transcription_start_cron.process_file_for_transcription')
 ]
