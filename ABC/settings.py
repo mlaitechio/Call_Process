@@ -51,10 +51,10 @@ MIDDLEWARE = [
 AUTHENTICATION_BACKENDS = (
     'django_auth_adfs.backend.AdfsAuthCodeBackend',
 )
-
+#new key2
 AUTH_ADFS = {
     "SERVER": "login.adityabirlacapital.com",
-    "CLIENT_ID": "RteXxo4hKE_S1iiiuiMuLaNisZbGwVy6xVkJDDbN",
+    "CLIENT_ID": "cfe85d02-8677-48e6-8060-4444a812ccc0",
     "RELYING_PARTY_ID": "https://absliamcnextgen.azurewebsites.net/",
     # Make sure to read the documentation about the AUDIENCE setting
     # when you configured the identifier as a URL!
