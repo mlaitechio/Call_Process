@@ -38,41 +38,38 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    #'django.middleware.security.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    #'django_auth_adfs.middleware.LoginRequiredMiddleware',
+    'django_auth_adfs.middleware.LoginRequiredMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware'
 ]
 
 AUTHENTICATION_BACKENDS = (
-    #'django_auth_adfs.backend.AdfsAuthCodeBackend',
+    'django_auth_adfs.backend.AdfsAuthCodeBackend',
 )
-#adfs disabled
+
 AUTH_ADFS = {
     "SERVER": "login.adityabirlacapital.com",
-    "CLIENT_ID": "7d42f662-8982-4b11-a578-35400112f728",
-    "RELYING_PARTY_ID": "7d42f662-8982-4b11-a578-35400112f728",
+    "CLIENT_ID": "cfe85d02-8677-48e6-8060-4444a812ccc0",
+    "RELYING_PARTY_ID": "https://absliamcnextgen.azurewebsites.net/",
     # Make sure to read the documentation about the AUDIENCE setting
     # when you configured the identifier as a URL!
-    "AUDIENCE": "microsoft:identityserver:7d42f662-8982-4b11-a578-35400112f728",
-    "CLIENT_SECRET": "3DOHM5eOjG_wFkSN7nhVTpka40xWcE-PAkFaVSQw",
+    "AUDIENCE": "microsoft:identityserver:absliamcnextgen.azurewebsites.net",
     "CLAIM_MAPPING": {"first_name": "given_name",
                       "last_name": "family_name",
                       "email": "email"},
-    "USERNAME_CLAIM": "email",
-    "GROUP_CLAIM": "group"
 }
 
-#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
 
 # Configure django to redirect users to the right URL for login
-#LOGIN_URL = "django_auth_adfs:login"
-#LOGIN_REDIRECT_URL = "/"
+LOGIN_URL = "django_auth_adfs:login"
+LOGIN_REDIRECT_URL = "/"
 
 ROOT_URLCONF = 'ABC.urls'
 
