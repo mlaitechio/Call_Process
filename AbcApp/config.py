@@ -40,7 +40,7 @@ AGENT_CONFIG_DICT_NEW = {
 }
 
 CUSTOMER_CONFIG_DICT = {
-    "escalation": r"IRDAI|Social Media|Talk to CEO|Mail it to CEO|File a case|Police|Consumer Court|talk to manager|ombudsman|complaint|police|Complain to manager|escalate|supervisor|senior|transfer the call|unhappy|frustrated|fed up",
+    "escalation": r"|Social Media|Connect me to supervisor/Speak with your supervisor|Connect to Manager|Social Media post|Complain in consumer forum|Escalate to CEO , mail to CEO/COO|Calling again & again|You people behave badly|Customer care do not respond|Complain to manager|Unhappy|Fed up|Pathetic|Awful|Worst Service|Horrible|Escalate|Legal Action|connect to Senior Management|Poor Service|SEBI|SEBI + COMPLAINT|AMFI|AMFI + COMPLAINT|Refund|Useless|Compensation|Delay|Bad|Shameful|Grievances|Weird|Shocked|Lethargic|Uncomfortable|Not satisfied|Lazy|Irate|Irritated|Frustrated|Annoyed|Ashamed|Court|Notice|Litigation|Fraud|forgery|Misspelling|Discrepancy|Disappointed|Poor performance|Social Media|Compensation|Immediate|Discrepancy|Reminder|Complaint|Mis-behave|Mis-sell|Incorrect information|Assault|Abuse|Threaten|Mis-communication|Harassed|Harassment",
 }
 
 
@@ -65,7 +65,7 @@ AGENT_CONFIG_DICT_NEW_HINDI = {
 }
 
 CUSTOMER_CONFIG_DICT_HINDI = {
-    "escalation": "एग्जिक्यूटिव के साथ कनेक्ट|मैने जब से कनेक्ट|पुलिस शिकायत|सोशल मीडिया पोस्ट|उपभोक्ता फोरम में शिकायत|आईआरडीए को शिकायत|सीओ एस्कैलेट|सुपरवाइजर से बात|मैनेजर से बात|एक्जीक्यूटिव से बात|बार बार फ़ोन करना|सेल्स के बंदे बदतमीजी से बात करते हैं|कस्टमर केयर वाले जवाब नहीं देते",
+    "escalation": "एग्जिक्यूटिव के साथ कनेक्ट|एग्ज़िक्यटिव के साथ कनेक्ट , सुपरवाइजर से बात, एग्ज़िक्यटिव से बात|मैनेजर से कनेक्ट , मैनेजर से बात|सोशल मीडिया पोस्ट|उपभोक्ता फोरम में शिकायत|सीईओ मेल|बार बार फ़ोन|बदतमीजी से बात|कस्टमर केयर वाले जवाब नहीं देते|मैनेजर से शिकायत करना|अप्रसन्न ,असंतुष्ट|सबसे खराब सेवा|सेबी|सेबी की शिकायत|एम्फी शिकायत|खराब|नाराज़|मुआवज़ा|शिकायत|एम्फी  + कोम्प्लैण्ट|फ्रोड|रेमाएण्डर|मिस्-बेहवे||मिस्-सेल्ल|वरिष्ठ अधिकारी से बात करवा दे|कॉल ट्रांसफर करे|परेशां ",
 }
 
 FATALITY_MAPPING = {
