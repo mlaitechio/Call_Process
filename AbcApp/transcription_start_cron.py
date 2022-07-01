@@ -364,7 +364,24 @@ def transcribe(audio_uri, locale, request_id):
                         d=  customer_last_positive
                         e = customer_last_negative
                         try:
-                            final_sentiment_percent = ((a - c) / (a + c) * 100) * 0.8 + ((d - e) / (d + e) * 0.2)
+                            n = (a - d) - (c - e)
+                            d = a + c
+                            dy = n / d
+                            x = dy * 0.8
+
+                            if d == 0 and e == 0:
+                                y = 0
+                            else:
+                                y = (((d - e) / d + e) * 0.2)
+
+                            final_sentiment_percent = (x + y) * 100
+
+
+
+
+
+
+
                         except ZeroDivisionError:
                             file.write(f"\nTotal Sentiment % => Not Defined(Division by 0)\n")
                             final_json["metadata"]["sentiment_score"]["final_sentiment_percent"] = "Not Defined(Division by 0)"
