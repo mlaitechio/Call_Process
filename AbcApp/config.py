@@ -1,67 +1,65 @@
 CONFIG_DICT = {
-    "wow_call": r"You[.]*helped me a lot|Thanks for[.]*Help|I am very happy|Thank you so much",
-    "opening": r"Thank you for calling Aditya Birla Health Insurance, how may I assist you today",
+    "wow_call": r"You[.]*helped me a lot|Thanks for[.]*Help|I am very happy|Thank you so much|You have helped me a lot|I am very happy|I am very happy|Thank you so much",
+    "opening": r"Thank you for calling Aditya Birla Health Insurance, how may I assist you today|May I have your name and folio number to assist you|May I have your name and folio number to assist you.",
     "active_listening": r"As I have understood your concern is|Please correct me if I am wrong but your issue is",
     "interruption": r"Sorry to interrupt you in between",
-    "acknowledgement": r"definitely help|rest assured",
+    "acknowledgement": r"definitely help|rest assured|I will definitely help you with your concern|Surely/ definitely will help you with With the details/Please be rest assured|Thank you for calling have a great/Nice day ahead|Thank you for calling in Aditya Birla mutual Fund| have a great/nice day ahead",
     "verbal_handshake": r"would like to inform my name is|your full name",
-    "empathy": r"I understand how you must be feeling|I am very sorry to hear that|I am sad to hear you had to go through such troubles",
-    "apology": r"sorry|apologize|regret[a-z\s]*inconvenience",
+    "empathy": r"I understand how you must be feeling|I am very sorry to hear that|I am sad to hear you had to go through such troubles|I understand your concern completely|Be rest assured| I will definitely help you| I can understand your concern|Be rest assured|I will definitely help you",
+    "apology": r"sorry|apologize|regret[a-z\s]*inconvenience|Really sorry for the inconvenence caused to you|I am very sorry|I apologize",
     "probing": r"please tell me|when did|what did",
-    "hold_procedure": r"please.*call.*hold",
+    "hold_procedure": r"please.*call.*hold|May I please put your call on hold|Thank you for being online|May I place your call on hold|Thanks you for being on hold",
     "alternative_offered": r"We are now on digital platforms like whatspp, portal & chatbot, have sent an SMS on your registered mobile number, please follow the instructions and activate the services",
     "retention_offered": r"continue|do not cancel|emergency this policy|beneficial|best in the market",
-    "additional_assistance": r"any other concern|anything else",
+    "additional_assistance": r"any other concern|anything else|Is there anything else I can help you with|Is there any other concern I can assist you with",
     "call_closing": r"Thank[\s]*you for calling in Aditya birla Health insurance. Be safe and healthy|Thank[\s]*you for calling in Aditya birla Helath insurance, have a great day ahead",
     "data_enrichment": r"update any alternative number|update any alternative email id",
-    "verification": r"verification is completed|thanks for.*verification",
-    "escalation": r"IRDAI|Social Media|CEO|File a case|Police|Consumer Court",
+    "verification": r"verification is completed|thanks for.*verification|For verification purpose, may I know|Thanks you for verifying your detals|Thank you for verification|",
+    "escalation": r"IRDAI|Social Media|CEO|File a case|Police|Consumer Court|I will complain to SEBI or higher authorities|I will post on Social Media|Write to CEO|File a case|Police complain against you|Consumer court",
     "health_intent": r"engage|yoga|gym|walk"
 }
 
 AGENT_CONFIG_DICT_NEW = {
-    "wow_call": r"happy|very happy|thank|thanks|thank you[\sso much]*|bahut[\sacha]*[\sbadiya]*",
-    "opening": r"(thank|welcome|dhanyawad).*?(help|assist|call|contacting|sahayata)",
-    "active_listening": r"[i\s]*understood|understand|acknowledge|definitely[\shelp]*|correct me|samja|samaj sakta|jaroor|rest assured|sahayata|nishchint|yeah|no problem|right|surely|sure|right",
-    "interruption": r"(sorry|kshama).*?(interrupt|mang)",
-    "acknowledgement": r"acknowledge|understand|definitely help|rest assured|sahayata|nischint|yeah|right|sure|surely",
-    "verbal_handshake": r"i am|my name[\sis]*|mera naam|main|aapka naam|your name",
-    "empathy": r"acknowledge|understand|definitely help|rest assured|very sorry|sad to hear|sad to know|dukh hua|samaj sakta|feel pain|no problem|sorry|may i|right|help|sure|surely",
-    "apology": r"sorry|apologize|regret[a-z\s]*inconvenience|kshama",
-    "probing": r"please tell me|when|what|how|where|why|can i|may i",
-    "hold_procedure": r"please.*call.*hold|line.*hold.*pe|sorry.*hold|call.*hold",
-    "alternative_offered": r"digital[\splatform]*|whatspp|chatbot|SMS|please follow the instructions",
-    "retention_offered": r"continue policy|do not cancel|beneficial|continue plan|best plan|comprehensive plan|unique benefits|additional features|additonal advantages|best in market|better than market|free coverage",
-    "additional_assistance": r"Anything else|any other concern|address your concern|any other help|any other assistance|aur[\skoi]*sahayata",
-    "call_closing": r"(thank you|thanks|dhanyawad).*?(calling|call|call krne ke liye).*?(good|great|be safe|nice day|subh din)",
-    "data_enrichment": r"update|alternate|alternative",
-    "verification": r"(unregistered number).*?(verify|verification)|thank.*verification",
-    "health_intent": r"engage|yoga|gym|walk|\bfit|health|swimming|sehat"
+    "opening": r"Good|Thank|mutual fund|Help or assist",
+    "call_closing": r"Thank|Calling|good daydhanyawad|call karne ke liye|shbh",
+    "acknowledgement": r"Acknowledge|Understand|definitely|help|rest assured|sahayata|nischint",
+    "apology": r"Sorry|incovenience|apologize|maafi|regret|kshama",
+    "empathy": r"Acknowledge|Understand concern|definitely|help|rest assured|feel pain|very sorry|sad to hear|sad to know|dukh hua|samasya samaj sakta",
+    "interruption": r"Sorry|Interrupt|kshama|mangi",
+    "hold_procedure": r"hold|thank",
+    "personalisation": r"sir|madam|mr|mrs",
+    "pinching_self_care": r"Whatsapp|Chatbot|voicebot|google assistant",
+    "further_assistance": r"Anything else|any other concern|address your concern|any other help|any other Assistance|aur koi sahayata",
+    "data_enrichment": r"update mobile number|update nominee",
+    "lead_promotion": r"want to invest more |wish to invest more",
+    "verification": r"verification|may I know|Thank",
+    "escalation_process": r"SEBI|Socila Median|Speak to manager|Ombudsman|Complaints|Police|Consumer|Forum|Court|Sue|FIR|Escalate|CEO|supervisor|seniors|transfer the call|unhappy|frustrated",
+    "patience": r"Please|may i|kindly|rest assured|really sorry",
+    "wow_call": r"very happy|thank you so much|bahut accha |bahut badiya|helped a lot"
 }
 
 CUSTOMER_CONFIG_DICT = {
-    "escalation": r"|Social Media|Connect me to supervisor/Speak with your supervisor|Connect to Manager|Social Media post|Complain in consumer forum|Escalate to CEO , mail to CEO/COO|Calling again & again|You people behave badly|Customer care do not respond|Complain to manager|Unhappy|Fed up|Pathetic|Awful|Worst Service|Horrible|Escalate|Legal Action|connect to Senior Management|Poor Service|SEBI|SEBI + COMPLAINT|AMFI|AMFI + COMPLAINT|Refund|Useless|Compensation|Delay|Bad|Shameful|Grievances|Weird|Shocked|Lethargic|Uncomfortable|Not satisfied|Lazy|Irate|Irritated|Frustrated|Annoyed|Ashamed|Court|Notice|Litigation|Fraud|forgery|Misspelling|Discrepancy|Disappointed|Poor performance|Social Media|Compensation|Immediate|Discrepancy|Reminder|Complaint|Mis-behave|Mis-sell|Incorrect information|Assault|Abuse|Threaten|Mis-communication|Harassed|Harassment",
+    "escalation": r"|Social Media|Connect me to supervisor/Speak with your supervisor|Connect to Manager|Social Media post|Complain in consumer forum|Escalate to CEO , mail to CEO/COO|Calling again & again|You people behave badly|Customer care do not respond|Complain to manager|Unhappy|Fed up|Pathetic|Awful|Worst Service|Escalate|Legal Action|connect to Senior Management|Poor Service|SEBI|SEBI + COMPLAINT|AMFI|AMFI + COMPLAINT|Refund|Useless|Compensation|Delay|Bad|Shameful|Grievances|Weird|Shocked|Lethargic|Uncomfortable|Not satisfied|Lazy|Irate|Irritated|Frustrated|Annoyed|Ashamed|Court|Notice|Litigation|Fraud|forgery|Misspelling|Discrepancy|Disappointed|Poor performance|Social Media|Compensation|Immediate|Discrepancy|Reminder|Complaint|Mis-behave|Mis-sell|Incorrect information|Assault|Abuse|Threaten|Mis-communication|Harassed|Harassment",
 }
 
-
 AGENT_CONFIG_DICT_NEW_HINDI = {
-    "wow_call": "बहुत बहुत धन्यवाद|बहुत बहुत शुक्रिया|बहुत अच्छा लगा",
-    "opening": "थैंक यू फॉर कॉलिंग, प्लस असिस्ट यू|कॉल करने के लिए धन्यवाद, मैं आपकी किस प्रकार सहायता कर सकता",
-    "active_listening": "जी मैं जान सकता हूँ|नोट डाउन कर लीजिए|सुन रहा हूँ मैं|अपडेट करदेता हूँ|राइट|हाँ जी|जैसे मैं देख पा|आप बताइए|हो जाएगा|लाइन पे रहिएगा|मैं अभी चेक करके बता|स्टेटस जानना चाहते हैं न|आपको अपडेट आ जाएगा",
-    "interruption": "सॉरी|माफ़ी चाहूंगा|जस्ट मूवमेंट|एक बार रिपीट|थोड़ा समय दीजिए|बाधित करने के लिए खेद है",
-    "acknowledgement": "जी सर|जी में|जी मैडम|हाँ जी|नोट डाउन कर लीजिए|माफी चाहूंगा। मैं इसके लिए|अपडेट कर देता हूँ|ठीक है|हाँ बताइए|ठीक है|चेक करके बता|जैसे कि मैं देख पा|लाइन पे रहिएगा|स्टेटस जानना चाहते है ना|हाँ जी बिलकुल|निश्चिंत रहिए",
-    "verbal_handshake": "मेरा नाम|आपका नाम|जी सर|जी मैडम|थैंक यू",
-    "empathy": "बिलकुल निश्चिंत रहिए गा|जी सर माफी चाहूंगा मैं|हाँ बताइए प्लीज़|माफ़ी चाहेंगे|असुविधा हुई|हो जाएगा",
-    "apology": "माफी चाहूंगा|माफ़ी चाहेंगे असुविधा हुई",
-    "probing": "रजिस्टर नंबर बता दो प्लीज्|पॉलिसी नंबर बता दीजिए?|अड्रेस बता दीजिए|मुझे बताएंगे|कब कहाँ कैसे|कृप्या बताएं",
-    "hold_procedure": " 2 मिनट के लिए कॉल होल्ड पे रख सकता हूँ|लाइन पे बने रहिए|लाइन पे रहिएगा",
-    "alternative_offered": "वेबसाइट पे एक्टिव अप व्हाट्सएप होटल, चैटबॉट",
-    "retention_offered": "जैसे आपको मैने कहा|आपको प्रॉब्लम नहीं होगी|बेनिफिट|सिक्योर लोन|सबसे अच्छा लोन|अक्सीडेंटल कवर|लाइफ कवर|अभी बंद करवाने का मतलब नहीं है|प्रदना करें",
-    "additional_assistance": "इसके अलावा और कोई सहायता|और कोई जानकारी|और कोई हेल्प|कोई अलटरनेट फ़ोन नंबर",
-    "call_closing": "बहुत धन्यवाद आपका|आपका दिन शुभ रहे|कॉल करने के लिए धन्यवाद थैंक यू",
-    "data_enrichment": "अलटरनेट फ़ोन नंबर|कोई अलटरनेट नंबर या ईमेल आई डी अपडेट",
-    "verification": "मैं आपका नाम जान सकता हूँ प्लस वेरिफिकेशन के लिए धन्यवाद|डेट ऑफ बर्थ प्लेस वेरिफिकेशन के लिए धन्यवाद|अड्रेस बता दीजिए, बस वेरिफिकेशन के लिए धन्यवाद|रजिस्टर्ड नंबर बता दीजिए लैरी विकेशन के लिए धन्यवाद",
-    "health_intent": "फिट रखने के लिए कोई एक्सरसाइज करते हैं जैसे"
+    "opening": r"थैंक यू फॉर कॉलिंग|असिस्ट यू कॉल करने के लिए धयानवाद|मैं आपकी किस प्रकार सहायता कर सकता",
+    "call_closing": r"धन्यवाद|आपका दिन शुभ रहे|कॉल करने के लिए धन्यवाद|थैंक यू",
+    "acknowledgement": r"जी सर|जी माम्|जी मैडम|हाँ जी|नोट डाउन कर लीजिए|हाँ बताइए",
+    "apology": r"माफ़ी चाहूंगा मैं इसके लिए|माफ़ी चाहेंगे|असुविधा हुई|लम्बे होल्ड के लिए माफ़ी चाहेंगे",
+    "empathy": r"हाँ जी बिलकुल|िश्चिन्त रहिये|बिलकुल निश्चिंत रहेगा|हाँ|बताइए|प्लीज़|जी सर|माफ़ी चाहूंगा|हो जाएगा|क्या मुझे बताएंगे|कृपया बताएं|आपको प्रॉब्लम नहीं होगी|लम्बे होल्ड के लिए माफ़ी चाहेंगे",
+    "interruption": r"माफ़ी चाहूंगा|जस्ट ए मोमेंट|एक बार रिपीट|थोड़ा समय दीजिए|बाधित करने के लिए खेद है",
+    "hold_procedure": r"कॉल होल्ड पे रख सकता हूँ|लाइन पे बने रहिए|धन्यवादहोल्ड|लाइन पे रहिएगा|धन्यवाद",
+    "personalisation": r"मिस्टर|श्री|मिस|सर|मैडम|्रीमती",
+    "pinching_self_care": r"वेबसाइट पे|व्हाट्सएप|पोर्टल,चैटबॉट",
+    "further_assistance": r"इसके अलावा और कोई सहायता|और कोई जानकारी|और कोई हेल्प",
+    "data_enrichment": r"कोई अल्टेरनाते नंबर या ईमेल आई डी अपडेट",
+    "lead_promotion": r"और इन्वेस्ट करना चाहेंगे|सेल्स टीम से कॉल बैक र्करवा दू",
+    "verification": r"जान सकता हूँ|वेरिफिकेशन के लिए धन्यवाद",
+    "escalation_process": r"एग्ज़िक्यटिव के साथ कनेक्ट|मैनेजर से कनेक्ट|सोशल मीडिया पोस्ट|सुपरवाइजर से बात|मैनेजर से बात|सीईओ एस्केलेट|उपभोक्ता फोरम में शिकायत|एग्ज़िक्यटिव से बात|बार बार फ़ोन करना|सेल्स के बंदे बदतमीजी से बात करते है|कस्टमर केयर वाले जवाब नहीं देते",
+    "patience": r"कृपया|सहृदय निवेदन|वास्तव में खेद|क्या मैं|निश्चित",
+    "wow_call": r"बहुत बहुत धन्यवाद|बहुत बहुत शुक्रिया|बहुत अच्छा लगा "
+
 }
 
 CUSTOMER_CONFIG_DICT_HINDI = {
@@ -69,45 +67,41 @@ CUSTOMER_CONFIG_DICT_HINDI = {
 }
 
 FATALITY_MAPPING = {
-    "wow_call": "non_fatal",
     "opening": "non_fatal",
-    "active_listening": "non_fatal",
-    "interruption": "non_fatal",
-    "acknowledgement": "non_fatal",
-    "verbal_handshake": "non_fatal",
-    "empathy": "non_fatal",
-    "apology": "non_fatal",
-    "probing": "non_fatal",
-    "hold_procedure": "non_fatal",
-    "alternative_offered": "non_fatal",
-    "retention_offered": "non_fatal",
-    "additional_assistance": "non_fatal",
     "call_closing": "non_fatal",
+    "acknowledgement": "non_fatal",
+    "apology": "non_fatal",
+    "empathy": "non_fatal",
+    "interruption": "non_fatal",
+    "hold_procedure": "non_fatal",
+    "personalisation": "non_fatal",
+    "pinching_self_care": "non_fatal",
+    "further_assistance": "non_fatal",
     "data_enrichment": "non_fatal",
+    "lead_promotion": "non_fatal",
     "verification": "fatal",
-    "escalation": "fatal",
-    "professionalism": "fatal",
-    "health_intent": "non_fatal"
+    "escalation_process": "fatal",
+    "patience": "fatal",
+    "wow_call": "non_fatal"
+
 }
 
-SCORE_MAPPING = {
-    "wow_call": 10,
+SCORE_MAPPING_NEW = {
     "opening": 2,
-    "active_listening": 4,
-    "interruption": 4,
-    "acknowledgement": 4,
-    "verbal_handshake": 2,
-    "empathy": 2,
-    "apology": 2,
-    "probing": 8,
-    "hold_procedure": 3,
-    "alternative_offered": 2,
-    "retention_offered": 2,
-    "additional_assistance": 2,
     "call_closing": 2,
+    "acknowledgement": 2,
+    "apology": 2,
+    "empathy": 2,
+    "interruption": 2,
+    "hold_procedure": 2,
+    "personalisation": 2,
+    "pinching_self_care": 2,
+    "further_assistance": 2,
     "data_enrichment": 4,
+    "lead_promotion": 4,
     "verification": 5,
-    "escalation": 5,
-    "professionalism": 5,
-    "health_intent": 2
+    "escalation_process": 5,
+    "patience": 5,
+    "wow_call": 5
+
 }
