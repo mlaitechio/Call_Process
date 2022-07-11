@@ -33,13 +33,13 @@ AGENT_CONFIG_DICT_NEW = {
     "data_enrichment": r"update mobile number|update nominee",
     "lead_promotion": r"want to invest more |wish to invest more",
     "verification": r"verification|may I know|Thank",
-    "escalation_process": r"SEBI|Socila Median|Speak to manager|Ombudsman|Complaints|Police|Consumer|Forum|Court|Sue|FIR|Escalate|CEO|supervisor|seniors|transfer the call|unhappy|frustrated",
+    "escalation_process": r"SEBI|Socila Median|Speak to manager|Ombudsman|Complaints|Police|Consumer|Forum|Court|Sue|FIR|Escalate|CEO|supervisor|seniors|transfer the call|frustrated",
     "patience": r"Please|may i|kindly|rest assured|really sorry",
     "wow_call": r"very happy|thank you so much|bahut accha |bahut badiya|helped a lot"
 }
 
 CUSTOMER_CONFIG_DICT = {
-    "escalation": r"|Social Media|Connect me to supervisor/Speak with your supervisor|Connect to Manager|Social Media post|Complain in consumer forum|Escalate to CEO , mail to CEO/COO|Calling again & again|You people behave badly|Customer care do not respond|Complain to manager|Unhappy|Fed up|Pathetic|Awful|Worst Service|Escalate|Legal Action|connect to Senior Management|Poor Service|SEBI|SEBI + COMPLAINT|AMFI|AMFI + COMPLAINT|Refund|Useless|Compensation|Delay|Bad|Shameful|Grievances|Weird|Shocked|Lethargic|Uncomfortable|Not satisfied|Lazy|Irate|Irritated|Frustrated|Annoyed|Ashamed|Court|Notice|Litigation|Fraud|forgery|Misspelling|Discrepancy|Disappointed|Poor performance|Social Media|Compensation|Immediate|Discrepancy|Reminder|Complaint|Mis-behave|Mis-sell|Incorrect information|Assault|Abuse|Threaten|Mis-communication|Harassed|Harassment",
+    "escalation": r"|Connect me to supervisor/Speak with your supervisor|Connect to Manager|Social Media post|Complain in consumer forum|Escalate to CEO , mail to CEO/COO|You people behave badly|Customer care do not respond|Complain to manager|Fed up|Pathetic|Awful|Worst Service|Escalate|Legal Action|connect to Senior Management|Poor Service|SEBI|SEBI|AMFI|Refund|Useless|Compensation|Shameful|Grievances|Weird|Lethargic|Not satisfied|Lazy|Irate|Irritated|Frustrated|Annoyed|Ashamed|Court|Litigation|Fraud|forgery|Misspelling|Discrepancy|Disappointed|Poor performance|Social Media|Compensation|Immediate|Discrepancy|Reminder|Complaint|Mis-behave|Mis-sell|Incorrect information|Assault|Abuse|Threaten|Mis-communication|Harassed|Harassment",
 }
 
 AGENT_CONFIG_DICT_NEW_HINDI = {
@@ -63,7 +63,7 @@ AGENT_CONFIG_DICT_NEW_HINDI = {
 }
 
 CUSTOMER_CONFIG_DICT_HINDI = {
-    "escalation": "एग्जिक्यूटिव के साथ कनेक्ट|एग्ज़िक्यटिव के साथ कनेक्ट , सुपरवाइजर से बात, एग्ज़िक्यटिव से बात|मैनेजर से कनेक्ट , मैनेजर से बात|सोशल मीडिया पोस्ट|उपभोक्ता फोरम में शिकायत|सीईओ मेल|बार बार फ़ोन|बदतमीजी से बात|कस्टमर केयर वाले जवाब नहीं देते|मैनेजर से शिकायत करना|अप्रसन्न ,असंतुष्ट|सबसे खराब सेवा|सेबी|सेबी की शिकायत|एम्फी शिकायत|खराब|नाराज़|मुआवज़ा|शिकायत|एम्फी  + कोम्प्लैण्ट|फ्रोड|रेमाएण्डर|मिस्-बेहवे||मिस्-सेल्ल|वरिष्ठ अधिकारी से बात करवा दे|कॉल ट्रांसफर करे|परेशां ",
+    "escalation": "एग्जिक्यूटिव के साथ कनेक्ट|एग्ज़िक्यटिव के साथ कनेक्ट , सुपरवाइजर से बात, एग्ज़िक्यटिव से बात|मैनेजर से कनेक्ट , मैनेजर से बात|सोशल मीडिया पोस्ट|उपभोक्ता फोरम में शिकायत|सीईओ मेल|बार बार फ़ोन|बदतमीजी से बात|कस्टमर केयर वाले जवाब नहीं देते|मैनेजर से शिकायत करना|अप्रसन्न ,असंतुष्ट|सबसे खराब सेवा|सेबी|सेबी की शिकायत|एम्फी शिकायत|खराब|मुआवज़ा|शिकायत|एम्फी  + कोम्प्लैण्ट|फ्रोड|रेमाएण्डर|मिस्-बेहवे||मिस्-सेल्ल|वरिष्ठ अधिकारी से बात करवा दे|कॉल ट्रांसफर करे|परेशां ",
 }
 
 FATALITY_MAPPING = {
