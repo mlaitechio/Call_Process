@@ -139,6 +139,9 @@ def create_final_score(final_df):
             "escalation_process"]
     # print(final_df)
     final_score_dict["score_details"] = final_df.to_dict("records")
+    if final_score_dict["score_details"][13]["speech_class"] == "escalation_process" and final_score_dict["score_details"][13]["found"] == 0.0:
+
+        final_score_dict["score_details"][13]["final_score"] = 5.0
     final_score_dict["fl_escalation_found"] = fl_escalation_found
 
     print(final_score_dict)
