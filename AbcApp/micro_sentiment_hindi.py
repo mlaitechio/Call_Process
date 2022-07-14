@@ -194,9 +194,9 @@ def count(json_filename_with_full_path, txt_filename_with_full_path):
     flag = 0
     if agent_name == "S1":
         flag = 1
-        count_values = {"Customer": S2, "Agent": S1}
-    else:
         count_values = {"Customer": S1, "Agent": S2}
+    else:
+        count_values = {"Customer": S2, "Agent": S1}
 
     txt_filename_with_full_path_count = txt_filename_with_full_path.split(".")[0] + "_" + "count.txt"
     with open(txt_filename_with_full_path_count, 'w+') as file:

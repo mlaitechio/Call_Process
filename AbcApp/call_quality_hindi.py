@@ -81,6 +81,19 @@ def create_final_score(final_df):
     non_fatal_score = 0
     fl_escalation_found = 0
 
+    # for key, value in score_dict.items():
+    #     if key:
+    #         if config.FATALITY_MAPPING[key] == "fatal":
+    #             if key == "escalation_process":
+    #                 fl_escalation_found = 1
+    #                 fatal_score += 0
+    #
+    #             else:
+    #                 fatal_score += config.SCORE_MAPPING_NEW[key]
+    #
+    #         else:
+    #             non_fatal_score += config.SCORE_MAPPING_NEW[key]
+
     for key, value in score_dict.items():
         if key:
             if config.FATALITY_MAPPING[key] == "fatal":
@@ -91,8 +104,26 @@ def create_final_score(final_df):
                 else:
                     fatal_score += config.SCORE_MAPPING_NEW[key]
 
-            else:
-                non_fatal_score += config.SCORE_MAPPING_NEW[key]
+    for key, value in score_dict.items():
+        if key:
+            if config.FATALITY_MAPPING[key] == "non_fatal":
+                if fatal_score == 15 and key == "acknowledgement":
+                    non_fatal_score += 2
+                if fatal_score == 15 and key == "apology":
+                    non_fatal_score += 2
+                if fatal_score == 15 and key == "empathy":
+                    non_fatal_score += 2
+                if fatal_score == 15 and key == "interruption":
+                    non_fatal_score += 2
+                if fatal_score == 15 and key == "personalisation":
+                    non_fatal_score += 2
+                if fatal_score == 15 and key == "further_assistance":
+                    non_fatal_score += 2
+                if fatal_score == 15 and key == "patience":
+                    non_fatal_score += 5
+
+                else:
+                    non_fatal_score += config.SCORE_MAPPING_NEW[key]
 
     if fl_escalation_found == 0:
         fatal_score += 5
@@ -118,8 +149,6 @@ def create_final_score(final_df):
         "final_score": final_score
     }
 
-    print("Fatal score: ", fatal_score)
-    print("Non Fatal score: ", non_fatal_score)
 
     score_lookup = pd.DataFrame(config.SCORE_MAPPING_NEW.items(), columns=["speech_class", "score"])
     found_speech = pd.DataFrame(score_dict.items(), columns=["speech_class", "score"])
@@ -139,12 +168,31 @@ def create_final_score(final_df):
             "escalation_process"]
     # print(final_df)
     final_score_dict["score_details"] = final_df.to_dict("records")
-    if final_score_dict["score_details"][13]["speech_class"] == "escalation_process" and final_score_dict["score_details"][13]["found"] == 0.0:
 
-        final_score_dict["score_details"][13]["final_score"] = 5.0
+    for i in final_score_dict["score_details"]:
+
+        if i["speech_class"] == "escalation_process" and i["found"] == 0.0:
+            i["final_score"] = 5.0
+
+    for i in final_score_dict["score_details"]:
+        if fatal_score == 15 and i["speech_class"] == "acknowledgement":
+            i["final_score"] = 2.0
+        if fatal_score == 15 and i["speech_class"] == "apology":
+            i["final_score"] = 2.0
+        if fatal_score == 15 and i["speech_class"] == "empathy":
+            i["final_score"] = 2.0
+        if fatal_score == 15 and i["speech_class"] == "interruption":
+            i["final_score"] = 2.0
+        if fatal_score == 15 and i["speech_class"] == "personalisation":
+            i["final_score"] = 2.0
+        if fatal_score == 15 and i["speech_class"] == "further_assistance":
+            i["final_score"] = 2.0
+        if fatal_score == 15 and i["speech_class"] == "patience":
+            i["final_score"] = 5.0
+
     final_score_dict["fl_escalation_found"] = fl_escalation_found
 
-    print(final_score_dict)
+
     return final_score_dict
 
 
@@ -158,7 +206,7 @@ def qa_main_hindi(txt_filename_with_full_path):
     """uncomment if want to see output classification"""
     # final_df.to_csv("output.csv", index=False)
     final_score_dict = final_score_details = create_final_score(final_df)
-    print(final_score_dict)
+
     txt_filename_with_full_path_qa = txt_filename_with_full_path.split(".")[0] + "_qa.txt"
     with open(txt_filename_with_full_path_qa, "w+", encoding='utf8') as file:
         file.write("\nQuality Analysis of Call:\n")
