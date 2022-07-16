@@ -1,5 +1,5 @@
 from AbcApp import config
-#import config
+# import config
 import pandas as pd
 import re
 
@@ -128,14 +128,14 @@ def create_final_score(final_df):
                 else:
                     non_fatal_score += config.SCORE_MAPPING_NEW[key]
 
-    if fl_escalation_found == 0:
+    if fl_escalation_found == 0 or fl_escalation_found == 1:
         fatal_score += 5
 
     # making final grid
     if fatal_score < 15:
-        final_score = "0/0"
+        final_score = "0,0"
     else:
-        final_score = "{}/{}".format(fatal_score, fatal_score+non_fatal_score)
+        final_score = "{},{}".format(fatal_score, fatal_score+non_fatal_score)
 
     if fatal_score == 15 and fatal_score+non_fatal_score > 69:
         final_colour = "Green"
@@ -176,6 +176,10 @@ def create_final_score(final_df):
         print(i["speech_class"])
         if i["speech_class"] == "escalation_process" and i["found"] == 0.0:
             i["final_score"] = 5.0
+    for i in final_score_dict["score_details"]:
+        print(i["speech_class"])
+        if i["speech_class"] == "escalation_process" and i["found"] == 1.0:
+            i["final_score"] = 5.0
 
     for i in final_score_dict["score_details"]:
         if fatal_score == 15 and i["speech_class"] == "acknowledgement":
@@ -196,8 +200,6 @@ def create_final_score(final_df):
 
 
     return final_score_dict
-
-
 
 def qa_main(txt_filename_with_full_path):
     # change file path

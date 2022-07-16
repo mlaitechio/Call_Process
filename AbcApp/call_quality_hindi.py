@@ -1,6 +1,5 @@
 from AbcApp import config
 #import config
-#import config
 import pandas as pd
 import re
 
@@ -125,14 +124,14 @@ def create_final_score(final_df):
                 else:
                     non_fatal_score += config.SCORE_MAPPING_NEW[key]
 
-    if fl_escalation_found == 0:
+    if fl_escalation_found == 0 or fl_escalation_found == 1 :
         fatal_score += 5
 
     # making final grid
     if fatal_score < 15:
-        final_score = "0/0"
+        final_score = "0,0"
     else:
-        final_score = "{}/{}".format(fatal_score, fatal_score + non_fatal_score)
+        final_score = "{},{}".format(fatal_score, fatal_score + non_fatal_score)
 
     if fatal_score == 15 and fatal_score + non_fatal_score > 69:
         final_colour = "Green"
@@ -173,6 +172,10 @@ def create_final_score(final_df):
 
         if i["speech_class"] == "escalation_process" and i["found"] == 0.0:
             i["final_score"] = 5.0
+    for i in final_score_dict["score_details"]:
+
+        if i["speech_class"] == "escalation_process" and i["found"] == 1.0:
+            i["final_score"] = 5.0
 
     for i in final_score_dict["score_details"]:
         if fatal_score == 15 and i["speech_class"] == "acknowledgement":
@@ -196,7 +199,11 @@ def create_final_score(final_df):
     return final_score_dict
 
 
-def qa_main_hindi(txt_filename_with_full_path):
+
+
+
+
+def qa_main(txt_filename_with_full_path):
     # change file path
     file_path = txt_filename_with_full_path
     clean_agent_speech_lines, clean_customer_speech_lines = read_file_and_extract_agent_speech(file_path)
@@ -206,7 +213,7 @@ def qa_main_hindi(txt_filename_with_full_path):
     """uncomment if want to see output classification"""
     # final_df.to_csv("output.csv", index=False)
     final_score_dict = final_score_details = create_final_score(final_df)
-
+    print(final_score_dict)
     txt_filename_with_full_path_qa = txt_filename_with_full_path.split(".")[0] + "_qa.txt"
     with open(txt_filename_with_full_path_qa, "w+", encoding='utf8') as file:
         file.write("\nQuality Analysis of Call:\n")
@@ -218,3 +225,5 @@ def qa_main_hindi(txt_filename_with_full_path):
                 "{:<25} {:<10} {:<10} {:<10}\n".format(x['speech_class'], x['score'], x['found'], x['final_score']))
 
     return final_score_dict
+
+# qa = qa_main('/home/mayank/Documents/abc/speech/abcstt/media/1622758434405.txt')
