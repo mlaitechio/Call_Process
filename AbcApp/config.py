@@ -18,7 +18,7 @@ CONFIG_DICT = {
     "escalation": r"IRDAI|Social Media|CEO|File a case|Police|Consumer Court|I will complain to SEBI or higher authorities|I will post on Social Media|Write to CEO|File a case|Police complain against you|Consumer court",
     "health_intent": r"engage|yoga|gym|walk"
 }
-
+# removed lead_promotion and data enrichment
 AGENT_CONFIG_DICT_NEW = {
     "opening": r"Good|Thank|mutual fund|Help or assist",
     "call_closing": r"Thank|Calling|good daydhanyawad|call karne ke liye|shbh",
