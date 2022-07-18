@@ -36,7 +36,7 @@ ACCOUNT_KEY = "RECLddq51PeKWQ8mnsTmCLjtdFEtCoCSDIU0AL9BFt0jydaht/QqpcpT8wDJh//Zi
 CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=absliamcsstoragemlai1;AccountKey=RECLddq51PeKWQ8mnsTmCLjtdFEtCoCSDIU0AL9BFt0jydaht/QqpcpT8wDJh//Zi1o7tCsu6XcyMZuIrEyl5g==;EndpointSuffix=core.windows.net"
 CONTAINER_NAME = "ubonadata-storage"
 LANGUAGE = {"english": "en-IN", "hindi": "hi-IN"}
-SUBSCRIPTION_KEY = "b3f1a49af9894877a71289e8e8bcb038"
+SUBSCRIPTION_KEY = "810cb01716704bfe99f9c40121352750"
 SERVICE_REGION = "centralindia"
 
 NAME = "Simple transcription"
