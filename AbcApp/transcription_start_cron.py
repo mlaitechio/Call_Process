@@ -38,7 +38,7 @@ CONTAINER_NAME = "ubonadata-storage"
 LANGUAGE = {"english": "en-IN", "hindi": "hi-IN"}
 SUBSCRIPTION_KEY = "b3f1a49af9894877a71289e8e8bcb038"
 SERVICE_REGION = "centralindia"
-0
+
 NAME = "Simple transcription"
 DESCRIPTION = "Simple transcription description"
 
@@ -46,7 +46,7 @@ DESCRIPTION = "Simple transcription description"
 ADAPTED_ACOUSTIC_ID = None  # guid of a custom acoustic model
 ADAPTED_LANGUAGE_ID = None  # guid of a custom language model
 
-
+#transcription starts
 def get_conversation(json_file_path, txt_file_path):
     is_converted = False
     try:
