@@ -203,7 +203,7 @@ def create_final_score(final_df):
 
 
 
-def qa_main(txt_filename_with_full_path):
+def qa_main_hindi(txt_filename_with_full_path):
     # change file path
     file_path = txt_filename_with_full_path
     clean_agent_speech_lines, clean_customer_speech_lines = read_file_and_extract_agent_speech(file_path)
