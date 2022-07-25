@@ -364,17 +364,11 @@ def transcribe(audio_uri, locale, request_id):
                         d=  customer_last_positive
                         e = customer_last_negative
                         try:
-                            n = (a - d) - (c - e)
-                            d = a + c
-                            dy = n / d
-                            x = dy * 0.8
+                            m = (((a - c) / (a + c)) * 0.8) * 100
+                            n = (((d - e) / 3) * 0.2) * 100
+                            z = m + n
 
-                            if d == 0 and e == 0:
-                                y = 0
-                            else:
-                                y = (((d - e) / d + e) * 0.2)
-
-                            final_sentiment_percent = (x + y) * 100
+                            final_sentiment_percent = z
 
 
 
